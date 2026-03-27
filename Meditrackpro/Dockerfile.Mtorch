@@ -1,0 +1,26 @@
+# Base image
+FROM python:3.13-slim
+
+# Set working directory
+WORKDIR /app
+
+# Environment variables
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
+
+# System dependencies for PyTorch and torchvision
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    cmake \
+    git \
+    curl \
+    ca-certificates \
+    libjpeg-dev \
+    libpng-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install PyTorch + Torchvision (CUDA 12 version)
+RUN pip3 install torch torchvision
+
+# Default command
+CMD ["python3"]

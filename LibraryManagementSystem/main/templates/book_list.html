@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}AY Medical Inventory{% endblock title %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static "main/index.css" %}">
+        <link rel="stylesheet" href="{% static "book/book.css" %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    </head>
+<body>
+        <header class="header">
+            <div class="logo">PA <span class="sub"> Library Management System</span></div>
+            <nav class="navbar">
+              <ul class="nav-links">
+                <li><a href="{% url "home" %}">Home</a></li>
+                <li><a href="{% url "book_list" %}">About</a></li>
+                <li><a href="https://benryautomation.pythonanywhere.com/contact/">Contact us</li>
+              </ul>
+              <a href="{% url "home" %}"><button class="button-24">Logout</button></a>
+              <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </nav>
+          </header>
+    <header class='head'>
+        
+        <nav>
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                    <h1>Welcome, {{ user.username }}!</h1>
+        <p>You are logged in as a {{ role }}.</p>
+                    <form class="d-flex" role="search" method="GET" action="{% url 'book_list' %}">
+                        <input class="form-control me-2" type="text" name="search" placeholder="Search books..." aria-label="Search" value="{{ request.GET.search|default:'' }}">
+                        <button type="submit" class="btn btn-outline-success">Search</button>
+                    </form>
+                    
+                </div>
+              </nav>
+        </nav>
+    </header>
+    <main>
+        <h2 class="h-boo">Books</h2>
+        <div class="book-grid">
+            {% for item in book_data %}
+            <div class="book-card">
+                <h3><strong>Name:</strong>{{ item.book.name }}</h3>
+                <p><strong>Book ID:</strong> {{ item.book.book_id }}</p>
+                <p><strong>Version:</strong> {{ item.book.version }}</p>
+                <p><strong>Available Copies:</strong> {{ item.book.number_of_copies }}</p>
+                {% if role == "Teacher" and item.book.number_of_copies == 0 %}
+                <div class="teacher-info">
+                    <h4>Issued To:</h4>
+                    {% if item.issued_students %}
+                        <ul>
+                            {% for student in item.issued_students %}
+                            <li>
+                                {{ student.student_name }} (Email: {{ student.email }}, Phone: {{ student.phone }})
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No issued students found.</p>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    </body>
+</html>

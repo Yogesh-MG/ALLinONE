@@ -1,0 +1,39 @@
+.head {
+    background-color: aqua;
+}
+
+.h-boo {
+    margin-left: 50px;
+}
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.book-card {
+    border: 1px solid #5e1919;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    background-color: #23bdd1;
+}
+.book-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+.book-card p {
+    margin: 4px 0;
+}
+.teacher-info {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.end{
+    margin-top: 20px;
+}
+    
+

@@ -1,0 +1,48 @@
+version: '3.8'
+services:
+  modbus-server:
+    build:
+      context: ./modbus_server
+    ports:
+      - "502:502"
+    networks:
+      - plc-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "502"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+  flask-app:
+    build:
+      context: ./flask_app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - modbus-server
+      - postgres
+    networks:
+      - plc-network
+    restart: unless-stopped
+    environment:
+      - PLC_USER_PASSWORD=your_password
+  postgres:
+    build:
+      context: ./postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: plcdata
+      POSTGRES_INITDB_ARGS: --encoding=UTF8
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - plc-network
+    restart: unless-stopped
+networks:
+  plc-network:
+    driver: bridge
+volumes:
+  postgres-data:
