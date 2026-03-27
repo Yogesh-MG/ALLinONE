@@ -1,38 +1,38 @@
-# 🚀 Project Portfolio Overview
+# Project Portfolio Overview
 
 A comprehensive collection of full-stack systems spanning financial markets, healthcare, agriculture, industrial IoT, and DevOps infrastructure. Each project addresses critical market needs with production-grade implementations.
 
 ---
 
-## 📋 Projects Summary
+## Projects Summary
 
-### 1. 🎯 **NSE_scraper** – Options Market Data Pipeline
+### 1. NSE_scraper – Options Market Data Pipeline
 Real-time NSE option chain data ingestion system for algorithmic traders, capturing 800+ strike records every 60 seconds with sub-100ms latency and 2+ years of backtesting history.
 
-### 2. 🏥 **Meditrackpro** – Healthcare Device Management & Compliance
+### 2. Meditrackpro – Healthcare Device Management & Compliance
 Unified platform for medical device inventory, compliance tracking, and regulatory adherence with FDA 21 CFR Part 11 support, enabling hospitals to prevent $2-5M/year in equipment liability and downtime.
 
-### 3. 🌱 **IoTfarming** – Smart Irrigation System
+### 3. IoTfarming – Smart Irrigation System
 End-to-end IoT automation platform with ESP32 hardware integration that optimizes agricultural water consumption through real-time soil monitoring and AI-driven autonomous irrigation, delivering 40% water savings and 9% yield improvements.
 
-### 4. 🏭 **ModbusTCP_sensor** – Industrial Data Pipeline
+### 4. ModbusTCP_sensor – Industrial Data Pipeline
 Lightweight Docker-based microservice bridging legacy Modbus-enabled PLCs to modern cloud infrastructure, enabling real-time monitoring and analytics without hardware replacement.
 
-### 5. 🐳 **PumpOS** – Application Orchestration & Deployment Platform
+### 5. PumpOS – Application Orchestration & Deployment Platform
 One-command Docker orchestration framework abstracting infrastructure complexity for developers—supporting multi-service deployments with automatic SSL, scaling, and environment management.
 
-### 6. 💳 **NiYo_moto** – Invoice & Customer Management System
+### 6. NiYo_moto – Invoice & Customer Management System
 Comprehensive Django-based invoicing and customer management platform for businesses with quotation generation, GST tax calculation, supplier tracking, and inventory management capabilities.
 
-### 7. 📚 **Library Management System** – Book & User Management
+### 7. Library Management System – Book & User Management
 Django web application for library operations enabling user authentication, book inventory tracking, borrowing management, and an admin dashboard for centralized book and user administration.
 
-### 8. 🛋️ **Furniture Detection & Color Overlaying** – ML-Based Furniture Analysis
+### 8. Furniture Detection & Color Overlaying – ML-Based Furniture Analysis
 Machine learning project using PyTorch and YOLO for furniture detection and segmentation with color overlaying capabilities, enabling advanced visualization and lamination analysis optimization.
 
 ---
 
-# 📊 Project 1: NSE_scraper – Options Market Data Pipeline
+# Project 1: NSE_scraper – Options Market Data Pipeline
 
 ## 1.1 Overview
 
@@ -151,7 +151,7 @@ class OptionStrike(models.Model):
 
 ---
 
-# 🏥 Project 2: Meditrackpro – Healthcare Device Management & Compliance
+# Project 2: Meditrackpro – Healthcare Device Management & Compliance
 
 ## 2.1 Overview
 
@@ -275,7 +275,7 @@ class DeviceAuditLog(models.Model):
 
 ---
 
-# 🌱 Project 3: IoTfarming – Smart Irrigation System
+# Project 3: IoTfarming – Smart Irrigation System
 
 ## 3.1 Overview
 
@@ -456,7 +456,7 @@ Phase 4: Government contracts for water subsidy administration
 
 ---
 
-# 🏭 Project 4: ModbusTCP_sensor – Industrial Data Pipeline
+# Project 4: ModbusTCP_sensor – Industrial Data Pipeline
 
 ## 4.1 Overview
 
@@ -583,7 +583,7 @@ Market Size:
 
 ---
 
-# 🐳 Project 5: PumpOS – Application Orchestration & Deployment Platform
+# Project 5: PumpOS – Application Orchestration & Deployment Platform
 
 ## 5.1 Overview
 
@@ -755,7 +755,7 @@ TAM Calculation:
 
 ---
 
-# 🎯 Portfolio Synergies
+# Portfolio Synergies
 
 ## Shared Technology Foundation
 
@@ -858,7 +858,7 @@ Admin Dashboard:
 
 ---
 
-# 📚 Project 7: Library Management System
+# Project 7: Library Management System
 
 ## 7.1 Overview
 
@@ -922,7 +922,7 @@ Book Inventory:
 
 ---
 
-# 🛋️ Project 8: Furniture Detection & Color Overlaying
+# Project 8: Furniture Detection & Color Overlaying
 
 ## 8.1 Overview
 
@@ -995,7 +995,7 @@ Web Interface:
 
 ---
 
-# 📈 Summary: Market Opportunities & TAM
+# Summary: Market Opportunities & TAM
 
 | Project | TAM | Market Status | Use Case |
 |---------|-----|---------------|----------|
@@ -1010,7 +1010,7 @@ Web Interface:
 
 ---
 
-## 📋 Getting Started
+## Getting Started
 
 Each project includes:
 - Complete setup instructions in its README
